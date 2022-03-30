@@ -1,4 +1,4 @@
-module mcli
+module github.com/bryant-rh/mcli
 
 go 1.17
 
