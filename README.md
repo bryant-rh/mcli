@@ -1,7 +1,11 @@
 # mcli
 mcli is a tool for pull container images from imagelist or manifests or charts
 
-这个工具可以从k8s，manifests文件中，charts，和imageList文件中解析镜像列表，打包成离线的镜像。
+这个工具同时支持三种方式解析镜像列表，打包成离线镜像。
+
+1. 从k8s，manifests yaml文件中解析镜像列表打包。
+2. 从charts包中解析镜像列表打包。
+3. 可以把要打包的镜像写入imageList文件中（一行一个），打包成离线镜像。
 
 可以用于k3s场景中部署一些集群基础设施组件，打包离线镜像包，放置于${K3S_ROOT}/k3s/agent/images 目录中，manifes文件放置于${K3S_ROOT}/k3s/server/manifests目录中，k3s启动时即可自动导入离线镜像。
 
