@@ -14,7 +14,7 @@ import (
 
 const (
 	use   = "mcli"
-	short = "mcli is a tool for pull container images from imagelist and manifests amd charts"
+	short = "mcli is a tool for pull container images from imagelist or manifests or charts"
 )
 
 var (

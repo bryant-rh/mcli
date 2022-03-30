@@ -24,7 +24,7 @@ func NewCmdPull(options *[]crane.Option) *cobra.Command {
 
 	cmd := &cobra.Command{
 		Use:   "pull IMAGE TARBALL",
-		Short: "Pull remote images by reference and store their contents locally",
+		Short: "Pull container images from imagelist or manifests or charts",
 		Args:  cobra.MinimumNArgs(2),
 		RunE: func(_ *cobra.Command, args []string) error {
 			o := crane.GetOptions(*options...)

@@ -20,7 +20,7 @@ import (
 func NewCmdAuth(argv ...string) *cobra.Command {
 	cmd := &cobra.Command{
 		Use:   "auth",
-		Short: "Log in or access credentials",
+		Short: "Login or access credentials",
 		Args:  cobra.NoArgs,
 		RunE:  func(cmd *cobra.Command, _ []string) error { return cmd.Usage() },
 	}
