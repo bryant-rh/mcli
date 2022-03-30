@@ -110,17 +110,20 @@ busybox:latest
 步骤二：
 ```bash
 #第一个参数为上述目录文件的根目录，第二个参数为打包文件名称，最后会进行gzip压缩，生成tar.gz 格式的镜像包文件
+
 mcli pull ./ image.tar 
 ```
 
 ```bash
 #支持--platform 参数来指定需要打包的镜像文件CPU架构，最后打包的文件会带上架构
 #如执行以下命令，最终打包的文件未image-linux-amd64.tar.gz
+
 mcli pull ./ image.tar --platform linux/amd64
 ```
 
 ```bash
 #支持--format （默认：tarball）选择打包的镜像格式,通常默认格式即足够
 #注意经测试发现k3s无法导入oci格式文件，因为oci默认是打包所有架构镜像文件
-mci pull ./ image.tar --format legacy linux/amd64
+
+mci pull ./ image.tar --format legacy --platform linux/amd64
 ```
