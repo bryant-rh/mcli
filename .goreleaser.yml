@@ -1,0 +1,31 @@
+before:
+  hooks:
+  - go mod download
+builds:
+- id: mcli
+  main: ./
+  binary: mcli
+  env:
+  - CGO_ENABLED=0
+  ldflags:
+  - -w
+  - -X github.com/bryant-rh/mcli/cmd/mcli.version={{.Version}}
+  goos:
+  - linux
+  - darwin
+  - windows
+  goarch:
+  - amd64
+  - arm64
+  ignore:
+  - goos: windows
+    goarch: arm64
+
+archives:
+- builds:
+  - mcli
+  name_template: "{{ .ProjectName }}_{{ .Tag }}_{{ .Os }}_{{ .Arch }}{{ if .Arm }}v{{ .Arm }}{{ end }}"
+  wrap_in_directory: false
+  format: tar.gz
+  files:
+  - LICENSE
